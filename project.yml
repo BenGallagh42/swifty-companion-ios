@@ -1,0 +1,47 @@
+# Read by `xcodegen` to produce SwiftyCompanion.xcodeproj.
+# Run `xcodegen generate` again any time a Swift file is added or removed.
+name: SwiftyCompanion
+options:
+  bundleIdPrefix: com.swiftycompanion
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  SwiftyCompanion:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Resources/Assets.xcassets
+    info:
+      path: Resources/Info.plist
+      # xcodegen regenerates Info.plist from this file every run — anything
+      # we want kept must be declared here, not hand-edited in the plist.
+      properties:
+        CFBundleDisplayName: Swifty Companion
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.swiftycompanion.app
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1,2" # 1 = iPhone, 2 = iPad
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+schemes:
+  SwiftyCompanion:
+    build:
+      targets:
+        SwiftyCompanion: all
+    run:
+      config: Debug
+    archive:
+      config: Release

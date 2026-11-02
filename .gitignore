@@ -1,0 +1,17 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Secrets — never commit real 42 API credentials.
+# Copy Sources/Config/Secrets.swift.example to Secrets.swift and fill it in locally.
+Sources/Config/Secrets.swift
